@@ -1,0 +1,29 @@
+{
+   "siemens_twix_file": "D:/data_pulseq_bstar/pulseq_bstar_acr_phantom_20230614/raw/meas_MID00185_FID66317_pulseq_bstar_1_38ms_1_61mm_i88_31k_SP.dat",
+   "ismrmrd_data_file": "D:/data_pulseq_bstar/pulseq_bstar_acr_phantom_20230614/raw/meas_MID00185_FID66317_pulseq_bstar_1_38ms_1_61mm_i88_31k_SP.h5",
+  "ismrmrd_noise_file": "D:/data_pulseq_bstar/pulseq_bstar_acr_phantom_20230614/raw/noise_meas_MID00185_FID66317_pulseq_bstar_1_38ms_1_61mm_i88_31k_SP.h5",
+            "seq_file": "D:/data_pulseq_bstar/pulseq_bstar_acr_phantom_20230614/seq/bstar_ecg0_TR1.38ms_1.61mm_b1929_rf200_i88_31k_FA25_self0_Phyllotaxis.seq",
+            "trj_file": "D:/data_pulseq_bstar/pulseq_bstar_acr_phantom_20230614/trajectory/traj_b1929_n288_Zhao_2020_MRM_v2_fine_tuning.trj",
+         "output_path": "D:/data_pulseq_bstar/pulseq_bstar_acr_phantom_20230614/pulseq_bstar_1_38ms_1_61mm_i88_31k_SP",
+           "bart_path": "/home/image/bart",
+  "study_date": "20230614",
+  "recon_parameters": [
+    {
+      "recon_matrix_size": [ 360, 360, 360 ],
+      "dicom_matrix_size": [ 256, 256, 256 ],
+      "recon_interp_factor": 1.060465416011151,
+      "cal_size": [ 32, 32, 32 ],
+      "lambda": 0.0001,
+      "max_iter": 30,
+      "B": 1,
+      "kappa": 1
+    }
+  ],
+  "noir_conf": [
+    {
+      "a": 16,
+      "b": 16,
+      "max_iter": 25
+    }
+  ]
+}
