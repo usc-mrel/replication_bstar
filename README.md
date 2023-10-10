@@ -50,7 +50,7 @@ Update variables in `batch_pulseq_bstar_acr_phantom_20230614.m`.
 
 Run `batch_pulseq_bstar_acr_phantom_20230614.m`.
 
-## Free-breathing Pulseq bSTAR using a spiral phyllotaxis pattern (not updated yet!)
+## Free-breathing Pulseq bSTAR (code not available yet)
 
 In `demo_estimate_resp.m`, I used source code from 
 1. Dr.Frank Ong's extreme_mri Python package: https://github.com/mikgroup/extreme_mri
