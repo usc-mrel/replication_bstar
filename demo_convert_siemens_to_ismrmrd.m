@@ -1,20 +1,22 @@
 % demo_convert_siemens_to_ismrmrd.m
 % Written by Nam Gyun Lee
 % Email: namgyunl@usc.edu, ggang56@gmail.com (preferred)
-% Started: 08/16/2022, Last modified: 08/16/2022
+% Started: 08/16/2022, Last modified: 04/22/2024
 
 %% Clean slate
 close all; clear all; clc;
 
-%% Define directory containing TWIX files
-data_directory = 'D:\data_pulseq_bstar\pulseq_bstar_acr_phantom_20230614\raw';
+%% Define a data path containing a .dat file (Siemens TWIX file)
+data_path = 'D:\replication_bstar_v2\data\vol0977_20240919\raw\misc';
+
+%% Start a stopwatch timer
+start_time = tic;
 
 %% Get directory information
-dir_info = dir(fullfile(data_directory, "*.dat"));
+dir_info = dir(fullfile(data_path, "*.dat"));
 
-%% Convert TWIX to ISMRMRD format
-start_time = tic;
-cd(data_directory);
+%% Convert TWIX format to ISMRMRD format
+cd(data_path);
 nr_twix_files = length(dir_info);
 
 for idx = 1:nr_twix_files

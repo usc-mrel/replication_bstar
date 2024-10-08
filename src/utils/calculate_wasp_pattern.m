@@ -7,7 +7,10 @@ function [phi, theta] = calculate_wasp_pattern(S, M, rpa_range)
 %   phi          list of azimuthal angles [rad]
 %   theta        list of polar angles [rad]
 % This is the correct version of WASP trajectory!
-
+%
+% Written by Nam Gyun Lee
+% Email: namgyunl@usc.edu, ggang56@gmail.com (preferred)
+% Started: 08/08/2023, Last modified: 04/26/2024
 
 %% Calculate the number of half-radial projections per "half" interleaf ("full" = Up+down Archimedean spiral)
 N = S / 2;
@@ -44,9 +47,9 @@ z_polar_axis = cos(polar_angles * pi / 180);
 %% Calculate WASP trajectories (wobbling Archemedean spiral pole)
 phi_gold = pi * (3 + sqrt(5)); % golden angle [rad]
 
-x = zeros(S, M, 'double');
-y = zeros(S, M, 'double');
-z = zeros(S, M, 'double');
+x = zeros(S, M, 'single');
+y = zeros(S, M, 'single');
+z = zeros(S, M, 'single');
 
 xyz_full_interleaf = cat(1, x_full_interleaf.', y_full_interleaf.', z_full_interleaf.'); % 3 x N
 

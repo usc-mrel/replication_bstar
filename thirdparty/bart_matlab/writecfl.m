@@ -22,7 +22,7 @@ function writecfl(filenameBase,data)
     
     data = data(:);
     
-    fwrite(fid,[real(data)'; imag(data)'],'float32');
+    fwrite(fid, [real(data).'; imag(data).'], 'float32');
     fclose(fid);
 end
 

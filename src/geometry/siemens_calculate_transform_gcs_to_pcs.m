@@ -19,33 +19,33 @@ main_orientation = fGSLClassOri(dNormalSag, dNormalCor, dNormalTra);
 switch main_orientation
     case SAGITTAL % =0
         if dRotAngle >= 0
-            if ((dRotAngle < pi/4) && ~fGSLAlmEqual(dRotAngle, pi/4)) % 0 <= angle < 45
+            if ((dRotAngle < pi / 4) && ~fGSLAlmEqual(dRotAngle, pi / 4)) % 0 <= angle < 45
                 read_sign = -1;
                 phase_sign =  1;
-            elseif (((dRotAngle > pi/4) || fGSLAlmEqual(dRotAngle, pi/4)) && (dRotAngle < 3*pi/4)) % 45 <= angle < 135
+            elseif (((dRotAngle > pi / 4) || fGSLAlmEqual(dRotAngle, pi / 4)) && (dRotAngle < 3 * pi / 4)) % 45 <= angle < 135
                 read_sign =  1;
                 phase_sign =  1;
-            elseif ((dRotAngle > 3*pi/4) || fGSLAlmEqual(dRotAngle, 3*pi/4)) % 135 <= angle <= 180
+            elseif ((dRotAngle > 3 * pi / 4) || fGSLAlmEqual(dRotAngle, 3 * pi / 4)) % 135 <= angle <= 180
                 read_sign =  1;
                 phase_sign = -1;
             end
         elseif dRotAngle < 0
-            if ((dRotAngle > -pi/4) && ~fGSLAlmEqual(dRotAngle, -pi/4)) % -45 < angle <= 0
+            if ((dRotAngle > -pi / 4) && ~fGSLAlmEqual(dRotAngle, -pi / 4)) % -45 < angle <= 0
                 read_sign = -1;
                 phase_sign =  1;
-            elseif ((dRotAngle > -3*pi/4) && ((dRotAngle < -pi/4) || fGSLAlmEqual(dRotAngle, -pi/4))) % -135 <= angle <= -45
+            elseif ((dRotAngle > -3 * pi / 4) && ((dRotAngle < -pi / 4) || fGSLAlmEqual(dRotAngle, -pi / 4))) % -135 <= angle <= -45
                 read_sign = -1;
                 phase_sign = -1;
-            elseif (dRotAngle < -3*pi/4) % angle < -135
+            elseif (dRotAngle < -3 * pi / 4) % angle < -135
                 read_sign =  1;
                 phase_sign = -1;
             end
         end
     case CORONAL % =1
-            if ((dRotAngle >= -pi/4) && (dRotAngle <= pi/4)) % -45 <= angle <= 45
+            if ((dRotAngle >= -pi / 4) && (dRotAngle <= pi / 4)) % -45 <= angle <= 45
                 read_sign =  1;
                 phase_sign =  1;
-            elseif ((dRotAngle > pi/4) && (dRotAngle < 3*pi/4) && ~fGSLAlmEqual(dRotAngle, 3*pi/4))
+            elseif ((dRotAngle > pi / 4) && (dRotAngle < 3 * pi / 4) && ~fGSLAlmEqual(dRotAngle, 3 * pi / 4))
                read_sign = 1;
                phase_sign = -1;
             else
@@ -61,21 +61,21 @@ switch main_orientation
             %--------------------------------------------------------------
     case TRANSVERSE % =2
         if dRotAngle >= 0
-            if (dRotAngle <= pi/4) % 0 <= angle <= 45
+            if (dRotAngle <= pi / 4) % 0 <= angle <= 45
                 read_sign = -1;
                 phase_sign =  1;
-            elseif ((dRotAngle > pi/4) && (dRotAngle < 3*pi/4) && ~fGSLAlmEqual(dRotAngle, 3*pi/4)) % 45 < angle < 135
+            elseif ((dRotAngle > pi / 4) && (dRotAngle < 3 * pi / 4) && ~fGSLAlmEqual(dRotAngle, 3 * pi / 4)) % 45 < angle < 135
                 read_sign =  1;
                 phase_sign =  1;
-            elseif ((dRotAngle > 3*pi/4) || fGSLAlmEqual(dRotAngle, 3*pi/4)) % 135 <= angle <= 180
+            elseif ((dRotAngle > 3 * pi / 4) || fGSLAlmEqual(dRotAngle, 3 * pi / 4)) % 135 <= angle <= 180
                 read_sign =  1;
                 phase_sign = -1;
             end
         elseif dRotAngle < 0
-            if ((dRotAngle > -pi/4) || fGSLAlmEqual(dRotAngle, -pi/4)) % -45 <= angle <= 0
+            if ((dRotAngle > -pi / 4) || fGSLAlmEqual(dRotAngle, -pi / 4)) % -45 <= angle <= 0
                 read_sign = -1;
                 phase_sign =  1;
-            elseif ((dRotAngle > -3*pi/4) && ~fGSLAlmEqual(dRotAngle, -3*pi/4) && (dRotAngle < -pi/4)) % -135 < angle < -45
+            elseif ((dRotAngle > -3 * pi / 4) && ~fGSLAlmEqual(dRotAngle, -3 * pi / 4) && (dRotAngle < -pi / 4)) % -135 < angle < -45
                 read_sign = -1;
                 phase_sign = -1;
             else % -180 <= angle < -135

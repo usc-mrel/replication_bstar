@@ -1,0 +1,37 @@
+{
+   "siemens_twix_file": "D:/replication_bstar_v2/data/vol_20240428/raw/meas_MID00572_FID14194_pulseq_bstar_0_9mm_fb.dat",
+   "ismrmrd_data_file": "D:/replication_bstar_v2/data/vol_20240428/raw/meas_MID00572_FID14194_pulseq_bstar_0_9mm_fb.h5",
+  "ismrmrd_noise_file": "D:/replication_bstar_v2/data/vol_20240428/raw/noise_meas_MID00572_FID14194_pulseq_bstar_0_9mm_fb.h5",
+   "ismrmrd_traj_file": "D:/replication_bstar_v2/data/vol_20240428/trajectory/traj_bstar_340mm_0.90mm_true0_TR2.22ms_rf200_i600_360k_FA25_WASP_self0_fid1_noise0.h5",
+            "trj_file": "D:/replication_bstar_v2/data/vol_20240428/trajectory/traj_2.0us_140us_900us_amp17.27_0.90mm.trj",
+         "output_path": "D:/replication_bstar_v2/data/vol_20240428/meas_MID00572_FID14194_pulseq_bstar_0_9mm_fb",
+           "bart_path": "/home/image/bart",
+  "recon_conf": [
+    {
+      "recon_matrix_size": [ 520, 384, 520 ],
+      "dicom_matrix_size": [ 520, 520, 520 ],
+      "recon_interp_factor": [ 1, 1, 1 ],
+      "cal_size": [ 32, 32, 32 ],
+      "lambda": 0.001,
+      "max_iter": 30,
+      "B": 4,
+      "kappa": 1
+    }
+  ],
+  "noir_conf": [
+    {
+      "a": 16,
+      "b": 16,
+      "max_iter": 25
+    }
+  ],
+   "resp_conf": [
+    {
+      "n": 9999,
+      "fl": 0.1,
+      "fh": 0.50,
+      "fw": 0.01
+    }
+  ],
+  "coil_selection": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
