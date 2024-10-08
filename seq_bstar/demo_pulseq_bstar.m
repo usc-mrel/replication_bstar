@@ -26,13 +26,10 @@ start_time = tic;
 
 %% Define the full path of a .json file
 %json_file = 'D:\replication_bstar_v2\seq_bstar\pulseq_bstar_sequence_parameters_0_90mm.json';
-%json_files{1} = 'D:\replication_bstar_v2\seq_bstar\pulseq_bstar_sequence_parameters_1_60mm_17sec.json';
-%json_files{2} = 'D:\replication_bstar_v2\seq_bstar\pulseq_bstar_sequence_parameters_1_60mm_23sec.json';
-json_files{1} = 'D:\replication_bstar_v2\seq_bstar\pulseq_bstar_sequence_parameters_0_90mm_free_breathing.json';
-nr_json_files = length(json_files);
-
-for json_number = 1:nr_json_files
-json_file = json_files{json_number};
+%json_file = 'D:\replication_bstar_v2\seq_bstar\pulseq_bstar_sequence_parameters_1_60mm_17sec.json';
+%json_file = 'D:\replication_bstar_v2\seq_bstar\pulseq_bstar_sequence_parameters_1_60mm_23sec.json';
+json_file = 'D:\replication_bstar_v2\seq_bstar\pulseq_bstar_sequence_parameters_0_90mm_free_breathing.json';
+json_file = 'D:\replication_bstar_v2\seq_bstar\pulseq_bstar_sequence_parameters_0_90mm_free_breathing_freemax.json';
 
 %% Read a .json file
 tstart = tic; fprintf('%s: Reading a .json file: %s... ', datetime, json_file);
@@ -134,8 +131,6 @@ mkdir(output_path);
 
 %% Calculate bSTAR imaging parameters
 calculate_bstar_imaging_parameters;
-
-return
 
 %% Create a sequence object
 seq = mr.Sequence(sys);
@@ -1457,8 +1452,6 @@ fprintf('grad_raster_time        = %5.2f [usec]\n', grad_raster_time * 1e6);
 fprintf('real_dwell_time         = %5.2f [usec]\n', real_dwell_time * 1e6);
 fprintf('readout_time (tau)      = %5.2f [msec]\n', tau * 1e3);
 fprintf('=================================================================\n');
-
-end
 
 %%
 return

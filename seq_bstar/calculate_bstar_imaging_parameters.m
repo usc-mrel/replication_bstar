@@ -14,6 +14,9 @@ switch grad_mode
     case 'Whisper'
         max_grad = 22;      % Max gradient strength [mT/m]
         max_slew = 50;      % Maximum slew rate [mT/m/ms]
+    case 'FreeMax'
+        max_grad = 26;      % Max gradient strength [mT/m]
+        max_slew = 45;      % Maximum slew rate [mT/m/ms]
 end
 
 %% Set system limits
