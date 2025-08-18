@@ -71,13 +71,21 @@ else
     error('File %s does not exist.  Please generate it.' , ismrmrd_data_file);
 end
 
-%% Read acquisitions
-tstart = tic; fprintf('%s: Reading acquisitions... ', datetime);
-raw_traj = traj_dset.readAcquisition(); % read all the acquisitions
+%% Get imaging parameters from an XML header
+traj_header = ismrmrd.xml.deserialize(traj_dset.readxml);
+data_header = ismrmrd.xml.deserialize(data_dset.readxml);
+
+%% Read acquisitions (data)
+tstart = tic; fprintf('%s: Reading acquisitions (data)... ', datetime);
+raw_data = data_dset.readAcquisition(); % read all acquisitions
 fprintf('done! (%6.4f/%6.4f sec)\n', toc(tstart), toc(start_time));
 
-tstart = tic; fprintf('%s: Reading acquisitions... ', datetime);
-raw_data = data_dset.readAcquisition(); % read all the acquisitions
+%% Calculate the number of acquisitions
+nr_acquisitions = data_dset.getNumberOfAcquisitions();
+
+%% Read acquisitions (traj)
+tstart = tic; fprintf('%s: Reading acquisitions (traj)... ', datetime);
+raw_traj = traj_dset.readAcquisition(); % read all acquisitions
 fprintf('done! (%6.4f/%6.4f sec)\n', toc(tstart), toc(start_time));
 
 %--------------------------------------------------------------------------
@@ -85,10 +93,6 @@ fprintf('done! (%6.4f/%6.4f sec)\n', toc(tstart), toc(start_time));
 %--------------------------------------------------------------------------
 acq_is_navigation_data = raw_traj.head.flagIsSet('ACQ_IS_NAVIGATION_DATA'); % FID navigator
 acq_user1              = raw_traj.head.flagIsSet('ACQ_USER1'); % self-navigation
-
-%% Get navigator data and imaging data
-nav_data = raw_data.select(find(acq_is_navigation_data));
-img_data = raw_data.select(find(~(acq_is_navigation_data | acq_user1)));
 
 %% Get k-space trajectories for each data type
 nav_traj  = raw_traj.select(find(acq_is_navigation_data));
@@ -105,6 +109,10 @@ subplot(1,2,2);
 stem(acq_user1);
 title('ACQ\_USER1');
 grid on; grid minor;
+
+%% Get navigator data and imaging data
+nav_data = raw_data.select(find(acq_is_navigation_data));
+img_data = raw_data.select(find(~(acq_is_navigation_data | acq_user1)));
 
 %% Parse an ISMRMRD header
 adc_samples  = double(max(img_traj.head.number_of_samples));

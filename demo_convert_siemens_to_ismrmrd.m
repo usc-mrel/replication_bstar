@@ -7,7 +7,7 @@
 close all; clear all; clc;
 
 %% Define a data path containing a .dat file (Siemens TWIX file)
-data_path = 'D:\replication_bstar_v2\data\vol0977_20240919\raw\misc';
+data_path = 'D:\replication_bstar\data\vol0964_20240910\raw';
 
 %% Start a stopwatch timer
 start_time = tic;

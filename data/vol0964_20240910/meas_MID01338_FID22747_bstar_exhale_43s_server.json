@@ -1,0 +1,28 @@
+{
+   "siemens_twix_file": "/server/sdata/nlee/replication_bstar_v2/data/vol0964_20240910/raw/meas_MID01338_FID22747_bstar_exhale_43s.dat",
+   "ismrmrd_data_file": "/server/sdata/nlee/replication_bstar_v2/data/vol0964_20240910/raw/meas_MID01338_FID22747_bstar_exhale_43s.h5",
+  "ismrmrd_noise_file": "/server/sdata/nlee/replication_bstar_v2/data/vol0964_20240910/raw/noise_meas_MID01338_FID22747_bstar_exhale_43s.h5",
+   "ismrmrd_traj_file": "/server/sdata/nlee/replication_bstar_v2/data/vol0964_20240910/trajectory/traj_bstar_340mm_1.60mm_true0_TR1.54ms_rf200_i4_28k_FA25_WASP_self0_fid1_noise0.h5",
+            "trj_file": "/server/sdata/nlee/replication_bstar_v2/data/vol0964_20240910/trajectory/traj_2.0us_140us_560us_amp17.27_1.60mm.trj",
+         "output_path": "/server/sdata/nlee/replication_bstar_v2/data/vol0964_20240910/meas_MID01338_FID22747_bstar_exhale_43s",
+           "bart_path": "/server/home/nlee/bart",
+  "recon_conf": [
+    {
+      "recon_matrix_size": [ 360, 360, 360 ],
+      "dicom_matrix_size": [ 360, 360, 360 ],
+      "recon_interp_factor": [ 1, 1, 1 ],
+      "cal_size": [ 32, 32, 32 ],
+      "lambda": 0.0001,
+      "max_iter": 30,
+      "kappa": 1
+    }
+  ],
+  "noir_conf": [
+    {
+      "a": 16,
+      "b": 16,
+      "max_iter": 25
+    }
+  ],
+  "coil_selection": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
